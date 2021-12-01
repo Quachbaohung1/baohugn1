@@ -162,7 +162,9 @@ const Home = ({ match }) => {
                                     products.map(product => (
                                         <Product key={product._id} product={product} col={3} />
                                     ))
-                                )}
+                                )
+                                
+                            }
 
                         </div>
                     </section>
