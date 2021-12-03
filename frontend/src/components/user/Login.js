@@ -80,7 +80,7 @@ const Login = ({ history, location }) => {
                                     LOGIN
                                 </button>
 
-                                <Link to="/register" className="float-right mt-3">New User?</Link>
+                                <Link to="/register" className="float-right mt-3">Register</Link>
                             </form>
                         </div>
                     </div>

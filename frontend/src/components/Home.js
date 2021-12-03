@@ -21,6 +21,7 @@ const Home = ({ match }) => {
     const [category, setCategory] = useState('')
     const [rating, setRating] = useState(0)
 
+
     const categories = [
         'Electronics',
         'Cameras',
@@ -102,7 +103,7 @@ const Home = ({ match }) => {
                                                 </h4>
 
                                                 <ul className="pl-0">
-                                                    {categories.map(category => (
+                                                    {categories && categories.map(category => (
                                                         <li
                                                             style={{
                                                                 cursor: 'pointer',
@@ -152,14 +153,14 @@ const Home = ({ match }) => {
 
                                     <div className="col-6 col-md-9">
                                         <div className="row">
-                                            {products.map(product => (
+                                            {products && products.map(product => (
                                                 <Product key={product._id} product={product} col={4} />
                                             ))}
                                         </div>
                                     </div>
                                 </Fragment>
                             ) : (
-                                    products.map(product => (
+                                    products && products.map(product => (
                                         <Product key={product._id} product={product} col={3} />
                                     ))
                                 )

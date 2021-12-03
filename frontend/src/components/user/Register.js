@@ -126,19 +126,6 @@ const Register = ({ history }) => {
                                         />
                                     </figure>
                                 </div>
-                                <div className='custom-file'>
-                                    <input
-                                        type='file'
-                                        name='avatar'
-                                        className='custom-file-input'
-                                        id='customFile'
-                                        accept="iamges/*"
-                                        onChange={onChange}
-                                    />
-                                    <label className='custom-file-label' htmlFor='customFile'>
-                                        Choose Avatar
-                                    </label>
-                                </div>
                             </div>
                         </div>
 
