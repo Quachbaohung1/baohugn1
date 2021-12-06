@@ -24,6 +24,7 @@ import {
 
 export const createOrder = (order) => async (dispatch, getState) => {
     try {
+        console.log("Create Order:", order);
 
         dispatch({ type: CREATE_ORDER_REQUEST })
 
@@ -34,6 +35,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.post('/api/v1/order/new', order, config)
+        console.log(data);
 
         dispatch({
             type: CREATE_ORDER_SUCCESS,

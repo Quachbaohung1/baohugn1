@@ -17,35 +17,33 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
+buildQuery = function(req) {
+        
+    const apiFeatures = new APIFeatures(Product.find(), req.query)
+                        .search()
+                        .filter();
+
+    return apiFeatures.query;
+}
 
 // Get all products => /api/v1/products?keyword=apple
-exports.getProducts = catchAsyncErrors(async (req, res, next) => {
-
-
-    const resPerPage = 8;
+exports.getProducts = catchAsyncErrors (async (req, res, next) => {
+    const resPerPage = 4;
     const productsCount = await Product.countDocuments();
 
-    const apiFeatures = new APIFeatures(Product.find(), req.query)
-        .search()
-        .filter()
-
-
-    let products = await apiFeatures.query;
+    
+    query = buildQuery(req);
+    console.log(query);
+    products = await query;
     let filteredProductsCount = products.length;
-
-    apiFeatures.pagination(resPerPage)
-    products = await apiFeatures.query;
-
 
     res.status(200).json({
         success: true,
         productsCount,
-        resPerPage,
+        //resPerPage,
         filteredProductsCount,
         products
-    })
-
-
+    }) 
 })
 
 // Get single product details => /api/v1/product/:id

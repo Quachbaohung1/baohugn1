@@ -69,9 +69,7 @@ const Login = ({ history, location }) => {
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </div>
-
-                                <Link to="/password/forgot" className="float-right mb-4">Forgot Password?</Link>
-
+                                
                                 <button
                                     id="login_button"
                                     type="submit"
@@ -80,7 +78,7 @@ const Login = ({ history, location }) => {
                                     LOGIN
                                 </button>
 
-                                <Link to="/register" className="float-right mt-3">Register</Link>
+                                <Link to="/register" className="float-right mt-3">Register?</Link>
                             </form>
                         </div>
                     </div>

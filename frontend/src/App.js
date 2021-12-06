@@ -57,9 +57,9 @@ function App() {
     store.dispatch(loadUser())
 
     async function getStripApiKey() {
-      const { data } = await axios.get('/api/v1/stripeapi');
-
-      setStripeApiKey(data.stripeApiKey)
+      //const { data } = await axios.get('/api/v1/stripeapi');
+      //console.log("APIKEY", data);
+      setStripeApiKey("sk_test_51K3IZIIdPT03RMX6NlJGStkK7978CzQgsMGZBdpL5fxnwZ1Gsdkg7irk4kClKeLJPZDGUu0iB0DIQzxrYaDEatmh00y2oBTYVQ");
     }
 
     getStripApiKey();

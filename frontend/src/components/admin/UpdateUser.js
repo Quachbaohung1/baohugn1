@@ -58,7 +58,13 @@ const UpdateUser = ({ history, match }) => {
         formData.set('email', email);
         formData.set('role', role);
 
-        dispatch(updateUser(user._id, formData))
+        dispatch(updateUser(
+            user._id,
+            {
+                'name' : name,
+                'email': email,
+                'role': role
+            },))
     }
 
 

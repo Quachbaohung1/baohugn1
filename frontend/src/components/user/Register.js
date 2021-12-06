@@ -46,7 +46,12 @@ const Register = ({ history }) => {
         formData.set('password', password);
         formData.set('avatar', avatar);
 
-        dispatch(register(formData))
+        dispatch(register({
+            'name': name,
+            'email': email,
+            'password': password,
+            //'avatar': avatar
+        }))
     }
 
     const onChange = e => {
@@ -125,6 +130,19 @@ const Register = ({ history }) => {
                                             alt='Avatar Preview'
                                         />
                                     </figure>
+                                </div>
+                                <div className='custom-file'>
+                                    <input
+                                        type='file'
+                                        name='avatar'
+                                        className='custom-file-input'
+                                        id='customFile'
+                                        accept="iamges/*"
+                                        onChange={onChange}
+                                    />
+                                    <label className='custom-file-label' htmlFor='customFile'>
+                                        Choose Avatar
+                                    </label>
                                 </div>
                             </div>
                         </div>

@@ -88,7 +88,7 @@ const ProductsList = ({ history }) => {
             })
         })
 
-        return data;
+            return data;
     }
 
     const deleteProductHandler = (id) => {

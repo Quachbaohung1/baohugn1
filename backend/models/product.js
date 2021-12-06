@@ -10,12 +10,12 @@ const productSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: [true, 'Please enter product price'],
-        default: 0.0,
-        maxLength: [5, 'Product price cannot exceed 5 characters']
+        maxLength: [5, 'Product name cannot exceed 5 characters'],
+        default: 0.0
     },
     description: {
         type: String,
-        required: [true, 'Please enter product description']
+        required: [true, 'Please enter product description'],
     },
     ratings: {
         type: Number,
@@ -35,7 +35,7 @@ const productSchema = new mongoose.Schema({
     ],
     category: {
         type: String,
-        required: [true, 'Please select catagory for this product'],
+        required: [true, 'Please select category for this product'],
         enum: {
             values: [
                 'Electronics',
@@ -44,14 +44,14 @@ const productSchema = new mongoose.Schema({
                 'Accessories',
                 'Headphones',
                 'Food',
-                'Books',
+                "Books",
                 'Clothes/Shoes',
                 'Beauty/Health',
                 'Sports',
                 'Outdoor',
                 'Home'
             ],
-            message: 'Please select correct catagory for product'
+            message: 'Please select correct category for product'
         }
     },
     seller: {
@@ -73,6 +73,7 @@ const productSchema = new mongoose.Schema({
             user: {
                 type: mongoose.Schema.ObjectId,
                 ref: 'User',
+                required: true
             },
             name: {
                 type: String,
@@ -91,11 +92,12 @@ const productSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
+        required: true
     },
-    createdAT: {
+    createdAt: {
         type: Date,
         default: Date.now
     }
 })
 
-module.exports = mongoose.model('Product' , productSchema);
+module.exports = mongoose.model('Product', productSchema);

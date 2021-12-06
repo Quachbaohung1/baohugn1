@@ -21,7 +21,6 @@ const Home = ({ match }) => {
     const [category, setCategory] = useState('')
     const [rating, setRating] = useState(0)
 
-
     const categories = [
         'Electronics',
         'Cameras',
@@ -163,9 +162,7 @@ const Home = ({ match }) => {
                                     products && products.map(product => (
                                         <Product key={product._id} product={product} col={3} />
                                     ))
-                                )
-                                
-                            }
+                                )}
 
                         </div>
                     </section>

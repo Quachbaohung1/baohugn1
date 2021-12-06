@@ -35,6 +35,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
+
 // Get single order   =>   /api/v1/order/:id
 exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id).populate('user', 'name email')
@@ -59,6 +60,7 @@ exports.myOrders = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
+
 // Get all orders - ADMIN  =>   /api/v1/admin/orders/
 exports.allOrders = catchAsyncErrors(async (req, res, next) => {
     const orders = await Order.find()
@@ -75,7 +77,6 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
         orders
     })
 })
-
 
 // Update / Process order - ADMIN  =>   /api/v1/admin/order/:id
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {

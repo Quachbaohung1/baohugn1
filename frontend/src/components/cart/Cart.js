@@ -20,8 +20,13 @@ const Cart = ({ history }) => {
     const increaseQty = (id, quantity, stock) => {
         const newQty = quantity + 1;
 
-        if (newQty > stock) return;
+        console.log(newQty);
+        if (newQty > stock) {
+            console.log("Out of items");
+            return;
+        }
 
+        //dispatch(removeItemFromCart(id))
         dispatch(addItemToCart(id, newQty))
     }
 
