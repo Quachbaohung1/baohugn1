@@ -1,2 +1,2 @@
-webapp: echo "Webapp is fine"
+web: echo "Webapp is fine"
 server: npm start
