@@ -1,2 +1,2 @@
-web: echo "Webapp is fine"
+web: cd frontend && npm start
 server: npm start
